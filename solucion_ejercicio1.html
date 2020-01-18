@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title></title>
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script>
+function cargarOyente()
+{
+var objeto_boton=document.getElementById("boton");
+objeto_boton.onclick=function(){validarDatos();}
+}
+function validarDatos()
+{
+var objeto_input_nombre=document.getElementById("nombre");
+var objeto_input_telefono=document.getElementById("telefono");
+//var nombre=document.getElementById("nombre").value;
+var nombre=objeto_input_nombre.value;
+var telefono=objeto_input_telefono.value;
+if (nombre=="")
+	{
+	//Poner campo nombre en rojo
+	objeto_input_nombre.classList.remove("is-valid");
+	objeto_input_nombre.classList.add("is-invalid");
+	}else
+	{
+	objeto_input_nombre.classList.remove("is-invalid");
+	objeto_input_nombre.classList.add("is-valid");
+	}
+if(telefono=="" || validarTelefono(telefono)==false)
+	{
+	//Poner campo teléfono en rojo
+	objeto_input_telefono.className="form-control is-invalid";
+	}else
+	{
+	objeto_input_telefono.className="form-control is-valid";
+	}
+
+}
+function validarTelefono(telefono)
+{
+/*if (telefono.length!=9)
+	{
+	return false;
+	}
+if(isNaN(telefono))
+	{
+	return false;
+	}*/
+	if (telefono.length!=9 || isNaN(telefono))
+		{
+		return false;
+		}
+return true;
+}
+</script>
+</head>
+
+<body onload="cargarOyente()">
+<div class="container">
+<div class="form-row">
+<input type="text" id="nombre"  class="form-control" placeholder="Introduzca su nombre">
+<input type="text" id="telefono"  class="form-control" placeholder="Introduzca su teléfono">
+<button id="boton" >Enviar</button>
+</div>
+</div>
+</body>
+
+
+
+</html>

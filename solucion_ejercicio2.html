@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title></title>
+<style>
+#masinfo
+{
+display: none;
+}
+</style>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script>
+function tratarMasInfo()
+{
+//var objeto_select=document.getElementById("opcion_masinfo");
+var objeto_select=document.getElementsByTagName("select");
+var opcion=objeto_select[0].value;
+	if (opcion=="S")
+	{
+	document.getElementById("masinfo").style.display="block";
+	}
+	else
+	{
+	document.getElementById("masinfo").style.display="none";
+	}
+}
+
+</script>
+</head>
+
+<body>
+¿Quiere recibir más información?
+<select id="opcion_masinfo" onchange="tratarMasInfo()">
+	<option value="0" selected>Seleccione una opción</option>
+	<option value="S">Sí, muchas gracias</option>
+	<option value="N">No</option>
+</select>
+<div id="masinfo" >
+Escriba el email: <input type="email" placeholder="miemail@midominio.com">
+</div>
+</div>
+</div>
+</body>
+
+
+
+</html>

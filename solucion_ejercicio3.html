@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title></title>
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script>
+function insertarProducto()
+{
+var producto=document.getElementById("producto").value;
+var elemento_ul=document.getElementById("lista");
+var elemento_li=document.createElement("li");
+var texto=document.createTextNode(producto);
+elemento_li.appendChild(texto);
+//Otra opción:
+//elemento_li.innerText=producto;
+elemento_ul.appendChild(elemento_li);
+document.getElementById("producto").value="";
+}
+</script>
+</head>
+
+<body>
+<ul id="lista"></ul>
+<br>
+<input type="text" id="producto"><button onclick="insertarProducto();">Añadir</button>
+</body>
+
+
+
+</html>
